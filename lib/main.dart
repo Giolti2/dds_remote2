@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:io';
 
-const double ROW_SPACE = 20;
+const double ROW_SPACE = 15;
 const double COL_SPACE = 40;
 
 void main() {
@@ -23,91 +23,7 @@ class MainApp extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(height: 150),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[MovementButtons()],
-            ),
-            SizedBox(height: ROW_SPACE),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RawMaterialButton(
-                  onPressed: () => {buttonFunction("back")},
-                  elevation: 2.0,
-                  fillColor: Colors.white,
-                  constraints: BoxConstraints(minWidth: 0.0),
-                  padding: EdgeInsets.all(15.0),
-                  shape: CircleBorder(),
-                  child: Icon(Icons.west, size: 35.0),
-                ),
-                SizedBox(width: COL_SPACE),
-                RawMaterialButton(
-                  onPressed: () => {buttonFunction("bubble")},
-                  elevation: 2.0,
-                  fillColor: const Color.fromARGB(255, 0, 0, 0),
-                  constraints: BoxConstraints(minWidth: 0.0),
-                  padding: EdgeInsets.all(15.0),
-                  shape: CircleBorder(),
-                  child: Icon(
-                    Icons.bubble_chart,
-                    color: Color(0xFFFFFFFF),
-                    size: 35.0,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: ROW_SPACE),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RawMaterialButton(
-                  onPressed: () => {buttonFunction("home")},
-                  elevation: 2.0,
-                  fillColor: Colors.white,
-                  constraints: BoxConstraints(minWidth: 0.0),
-                  padding: EdgeInsets.all(15.0),
-                  shape: CircleBorder(),
-                  child: Icon(Icons.home_filled, size: 35.0),
-                ),
-                SizedBox(width: COL_SPACE),
-                RawMaterialButton(
-                  onPressed: () => {buttonFunction("mute")},
-                  elevation: 2.0,
-                  fillColor: Colors.white,
-                  constraints: BoxConstraints(minWidth: 0.0),
-                  padding: EdgeInsets.all(15.0),
-                  shape: CircleBorder(),
-                  child: Icon(Icons.volume_off, size: 35.0),
-                ),
-              ],
-            ),
-            SizedBox(height: ROW_SPACE),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RawMaterialButton(
-                  onPressed: () => {buttonFunction("settings")},
-                  elevation: 2.0,
-                  fillColor: Colors.white,
-                  constraints: BoxConstraints(minWidth: 0.0),
-                  padding: EdgeInsets.all(15.0),
-                  shape: CircleBorder(),
-                  child: Icon(Icons.settings, size: 35.0),
-                ),
-                SizedBox(width: COL_SPACE),
-                RawMaterialButton(
-                  onPressed: () => {buttonFunction("menu")},
-                  elevation: 2.0,
-                  fillColor: Colors.white,
-                  constraints: BoxConstraints(minWidth: 0.0),
-                  padding: EdgeInsets.all(15.0),
-                  shape: CircleBorder(),
-                  child: Icon(Icons.menu, size: 35.0),
-                ),
-              ],
-            ),
-            SizedBox(height: ROW_SPACE),
+            SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -119,16 +35,112 @@ class MainApp extends StatelessWidget {
                   padding: EdgeInsets.all(5.0),
                   shape: CircleBorder(),
                   child: Icon(Icons.power_settings_new, size: 20.0),
-                ),
-                SizedBox(width: 32),
+                )
+              ],
+            ),
+            SizedBox(height: ROW_SPACE),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[MovementButtons()],
+            ),
+            SizedBox(height: ROW_SPACE),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
                 RawMaterialButton(
-                  onPressed: () => {buttonFunction("hdmi")},
+                  onPressed: () => {buttonFunction("volume-up")},
                   elevation: 2.0,
                   fillColor: Colors.white,
                   constraints: BoxConstraints(minWidth: 0.0),
-                  padding: EdgeInsets.all(5.0),
+                  padding: EdgeInsets.all(15.0),
                   shape: CircleBorder(),
-                  child: Icon(Icons.input, size: 20.0),
+                  child: Icon(Icons.add, size: 35.0),
+                ),
+                SizedBox(width: COL_SPACE),
+                RawMaterialButton(
+                  onPressed: () => {buttonFunction("back")},
+                  elevation: 2.0,
+                  fillColor: Colors.white,
+                  constraints: BoxConstraints(minWidth: 0.0),
+                  padding: EdgeInsets.all(15.0),
+                  shape: CircleBorder(),
+                  child: Icon(
+                    Icons.west, size: 35.0),
+                ),
+              ],
+            ),
+            SizedBox(height: ROW_SPACE),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RawMaterialButton(
+                  onPressed: () => {buttonFunction("volume-down")},
+                  elevation: 2.0,
+                  fillColor: Colors.white,
+                  constraints: BoxConstraints(minWidth: 0.0),
+                  padding: EdgeInsets.all(15.0),
+                  shape: CircleBorder(),
+                  child: Icon(Icons.remove, size: 35.0),
+                ),
+                SizedBox(width: COL_SPACE),
+                RawMaterialButton(
+                  onPressed: () => {buttonFunction("home")},
+                  elevation: 2.0,
+                  fillColor: Colors.white,
+                  constraints: BoxConstraints(minWidth: 0.0),
+                  padding: EdgeInsets.all(15.0),
+                  shape: CircleBorder(),
+                  child: Icon(Icons.home_filled, size: 35.0),
+                ),
+              ],
+            ),
+            SizedBox(height: ROW_SPACE),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RawMaterialButton(
+                  onPressed: () => {buttonFunction("mute")},
+                  elevation: 2.0,
+                  fillColor: Colors.white,
+                  constraints: BoxConstraints(minWidth: 0.0),
+                  padding: EdgeInsets.all(15.0),
+                  shape: CircleBorder(),
+                  child: Icon(Icons.volume_off, size: 35.0),
+                ),
+                SizedBox(width: COL_SPACE),
+                RawMaterialButton(
+                  onPressed: () => {buttonFunction("sidebar")},
+                  elevation: 2.0,
+                  fillColor: Colors.white,
+                  constraints: BoxConstraints(minWidth: 0.0),
+                  padding: EdgeInsets.all(15.0),
+                  shape: CircleBorder(),
+                  child: Icon(Icons.view_sidebar, size: 35.0),
+                ),
+              ],
+            ),
+            SizedBox(height: ROW_SPACE),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RawMaterialButton(
+                  onPressed: () => {buttonFunction("bubbles")},
+                  elevation: 2.0,
+                  fillColor: Colors.white,
+                  constraints: BoxConstraints(minWidth: 0.0),
+                  padding: EdgeInsets.all(15.0),
+                  shape: CircleBorder(),
+                  child: Icon(Icons.mic, size: 35.0),
+                ),
+                SizedBox(width: COL_SPACE),
+                RawMaterialButton(
+                  onPressed: () => {buttonFunction("user")},
+                  elevation: 2.0,
+                  fillColor: Colors.white,
+                  constraints: BoxConstraints(minWidth: 0.0),
+                  padding: EdgeInsets.all(15.0),
+                  shape: CircleBorder(),
+                  child: Icon(Icons.person, size: 35.0),
                 ),
               ],
             ),
@@ -141,6 +153,9 @@ class MainApp extends StatelessWidget {
 
 class MovementButtons extends StatelessWidget {
   @override
+  static const buttonSize = 50.0;
+  static const buttonSize2 = 80.0;
+  static const buttonSize3 = 70.0;
   Widget build(BuildContext context) {
     return Stack(
       children: [
@@ -160,60 +175,61 @@ class MovementButtons extends StatelessWidget {
           shape: CircleBorder(),
           child: Table(
             columnWidths: const <int, TableColumnWidth>{
-              0: FixedColumnWidth(60),
-              1: FixedColumnWidth(80),
-              2: FixedColumnWidth(60),
+              0: FixedColumnWidth(buttonSize),
+              1: FixedColumnWidth(buttonSize2),
+              2: FixedColumnWidth(buttonSize),
             },
             defaultVerticalAlignment: TableCellVerticalAlignment.middle,
             children: <TableRow>[
               TableRow(
                 children: [
-                  Container(height: 60),
+                  Container(height: buttonSize),
                   InkWell(
                     onTap: () => {buttonFunction("up")},
-                    child: Container(height: 60),
+                    onLongPress: () => {buttonFunction("hold up")},
+                    child: Container(height: buttonSize),
                   ),
-                  Container(height: 60),
+                  Container(height: buttonSize),
                 ],
               ),
               TableRow(
                 children: [
                   InkWell(
                     onTap: () => {buttonFunction("left")},
-                    child: Container(height: 80),
+                    child: Container(height: buttonSize2),
                   ),
-                  Container(height: 80),
+                  Container(height: buttonSize2),
                   InkWell(
                     onTap: () => {buttonFunction("right")},
-                    child: Container(height: 80),
+                    child: Container(height: buttonSize2),
                   ),
                 ],
               ),
               TableRow(
                 children: [
-                  Container(height: 60),
+                  Container(height: buttonSize),
                   InkWell(
                     onTap: () => {buttonFunction("down")},
-                    child: Container(height: 60),
+                    child: Container(height: buttonSize),
                   ),
-                  Container(height: 60),
+                  Container(height: buttonSize),
                 ],
               ),
             ],
           ),
         ),
         Container(
-          height: 200,
-          width: 200,
+          height: buttonSize*2 + buttonSize2,
+          width: buttonSize*2 + buttonSize2,
           alignment: Alignment.center,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               shape: CircleBorder(),
               padding: EdgeInsets.all(24),
-              fixedSize: const Size(70, 70),
+              fixedSize: const Size(buttonSize3, buttonSize3),
             ),
             onPressed: () => {buttonFunction("ok")},
-            onLongPress: () => {buttonFunction("hold")},
+            onLongPress: () => {buttonFunction("hold ok")},
             child: null,
           ),
         ),
@@ -233,5 +249,4 @@ void buttonFunction(String message) async {
   } catch (e) {
     print('Error connecting: $e');
   }
-
 }

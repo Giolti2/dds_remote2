@@ -17,60 +17,69 @@ const server = net.createServer((socket) => {
 
         switch (message) {
             case "up":
-                keyboard.type(Key.Up);
+                keyboard.type(Key.W);
                 console.log("Pressing up");
                 break;
             case "left":
-                keyboard.type(Key.Left);
+                keyboard.type(Key.A);
                 console.log("Pressing left");
                 break;
             case "right":
-                keyboard.type(Key.Right);
+                keyboard.type(Key.D);
                 console.log("Pressing right");
                 break;
             case "down":
-                keyboard.type(Key.Down);
+                keyboard.type(Key.S);
                 console.log("Pressing down");
                 break;
             case "ok":
-                keyboard.type(Key.A);
+                keyboard.type(Key.Space);
                 console.log("Pressing ok");
                 break;
             case "back":
-                keyboard.type(Key.B);
+                keyboard.type(Key.F);
                 console.log("Pressing back");
                 break;
-            case "bubble":
-                keyboard.type(Key.C);
+            case "bubbles":
+                keyboard.type(Key.G);
                 console.log("Pressing assistant");
                 break;
             case "home":
-                keyboard.type(Key.D);
+                keyboard.type(Key.H);
                 console.log("Pressing home");
                 break;
             case "mute":
-                keyboard.type(Key.E);
+                keyboard.type(Key.I);
                 console.log("Pressing mute");
                 break;
-            case "settings":
-                keyboard.type(Key.F);
-                console.log("Pressing settings");
+            case "sidebar":
+                keyboard.type(Key.J);
+                console.log("Pressing sidebar");
                 break;
             case "menu":
-                keyboard.type(Key.G);
+                keyboard.type(Key.K);
                 console.log("Pressing menu");
                 break;
             case "power":
-                keyboard.type(Key.H);
+                keyboard.type(Key.L);
                 console.log("Pressing power");
                 break;
-            case "hdmi":
-                keyboard.type(Key.I);
-                console.log("Pressing input");
+            case "user":
+                keyboard.type(Key.M);
+                console.log("Pressing user");
                 break;
-            case "hold":
-                keyboard.type(Key.J);
-                console.log("Holding down");
+            case "hold ok":
+                keyboard.type(Key.N);
+                console.log("Holding ok");
+            case "hold up":
+                keyboard.type(Key.O);
+                console.log("Holding up");
+            case "volume-up":
+                keyboard.type(Key.P);
+                console.log("Volume up");
+            case "volume-down":
+                keyboard.type(Key.Q);
+                console.log("Volume down");
             default:
                 break;
           }
