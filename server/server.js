@@ -56,24 +56,19 @@ const server = net.createServer((socket) => {
                 keyboard.type(Key.J);
                 console.log("Pressing sidebar");
                 break;
-            case "menu":
-                keyboard.type(Key.K);
-                console.log("Pressing menu");
-                break;
             case "power":
                 keyboard.type(Key.L);
                 console.log("Pressing power");
-                break;
-            case "user":
-                keyboard.type(Key.M);
-                console.log("Pressing user");
                 break;
             case "hold ok":
                 keyboard.type(Key.N);
                 console.log("Holding ok");
             case "hold up":
-                keyboard.type(Key.O);
+                startHoldingUp();
                 console.log("Holding up");
+            case "release up":
+                stopHoldingUp();
+                console.log("Releasing up");
             case "volume-up":
                 keyboard.type(Key.P);
                 console.log("Volume up");
@@ -101,3 +96,18 @@ server.listen(PORT, HOST, () => {
 server.on('error', (err) => {
   console.error('Server error:', err.message);
 });
+
+var timer;
+
+function startHoldingUp() {
+    timer = setInterval(holdingUpRoutine, 300);
+}
+
+function stopHoldingUp() {
+    clearInterval(timer);
+}
+
+function holdingUpRoutine() {
+    keyboard.type(Key.W);
+    console.log("Pressing up");
+}
