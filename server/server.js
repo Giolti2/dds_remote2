@@ -7,6 +7,10 @@ const {
   
 keyboard.config.autoDelayMs = 50;
 
+const BACK = Key.K;
+const HOME = Key.H;
+const SIDE = Key.B;
+
 const PORT = 8000;
 const HOST = '0.0.0.0'; // Listen on all network interfaces
 
@@ -37,7 +41,7 @@ const server = net.createServer((socket) => {
                 console.log("Pressing ok");
                 break;
             case "back":
-                keyboard.type(Key.F);
+                keyboard.type(BACK);
                 console.log("Pressing back");
                 break;
             case "bubbles":
@@ -45,7 +49,7 @@ const server = net.createServer((socket) => {
                 console.log("Pressing assistant");
                 break;
             case "home":
-                keyboard.type(Key.H);
+                keyboard.type(HOME);
                 console.log("Pressing home");
                 break;
             case "mute":
@@ -53,7 +57,7 @@ const server = net.createServer((socket) => {
                 console.log("Pressing mute");
                 break;
             case "sidebar":
-                keyboard.type(Key.J);
+                keyboard.type(SIDE);
                 console.log("Pressing sidebar");
                 break;
             case "power":
