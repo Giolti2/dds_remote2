@@ -38,7 +38,7 @@ const server = net.createServer((socket) => {
                 console.log("Pressing down");
                 break;
             case "ok":
-                keyboard.type(Key.Space);
+                keyboard.type(OK);
                 console.log("Pressing ok");
                 break;
             case "back":
