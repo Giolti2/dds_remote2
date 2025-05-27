@@ -7,9 +7,10 @@ const {
   
 keyboard.config.autoDelayMs = 50;
 
-const BACK = Key.K;
+const BACK = Key.I;
 const HOME = Key.H;
 const SIDE = Key.B;
+const OK = Key.K;
 
 const PORT = 8000;
 const HOST = '0.0.0.0'; // Listen on all network interfaces
