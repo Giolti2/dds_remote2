@@ -229,7 +229,7 @@ void buttonFunction(String message) async {
   HapticFeedback.lightImpact();
 
   try {
-    final socket = await Socket.connect('192.168.1.32', 8000);
+    final socket = await Socket.connect('192.168.182.219', 8000);
     print('Connected to: ${socket.remoteAddress.address}:${socket.remotePort}');
 
     socket.write(message);
